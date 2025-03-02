@@ -1,10 +1,10 @@
 import React from 'react';
+import AppDesk from '../components/AppDesk';
 
 function Home() {
   return (
-    <div className="bg-black w-full p-5" style={{ height: 'calc(100vh - 50px)' }}>
-      <h1 className="text-white">Home Page</h1>
-
+    <div className="w-full p-5" style={{ height: 'calc(100vh - 50px)', backgroundImage: 'url(/assets/wallpaper.png)', backgroundSize: 'cover' }}>
+      <AppDesk />
     </div>
   );
 }
