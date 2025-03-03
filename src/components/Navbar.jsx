@@ -25,8 +25,8 @@ function Navbar() {
   return (
     <>
       <div className='flex'>
-        <div className="bg-gray-800 text-white p-3 w-335" style={{ height: '50px' }}>
-          <ul className="list-none p-0 flex justify-center gap-3 ml-50">
+        <div className="bg-gray-800 text-white p-3 w-full" style={{ height: '50px' }}>
+          <ul className="list-none p-0 flex justify-center gap-3 ml-100">
             <li className="relative group hover:bg-black hover:bg-opacity-10 p-1 rounded">
               <a href="#start">
                 <img src="/assets/windows.png" alt="start" className="h-6 w-6" />
@@ -77,7 +77,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="bg-gray-800 text-white p-3 w-50 flex flex-col items-end justify-center text-[13px]" style={{ height: '50px' }}>
+        <div className="bg-gray-800 text-white p-3 w-135 flex flex-col items-end justify-center text-[13px]" style={{ height: '50px' }}>
           <span>{formatTime(currentTime)}</span>
           <span>{formatDate(currentTime)}</span>
         </div>
