@@ -10,7 +10,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-full p-5" style={{ height: 'calc(100vh - 50px)', backgroundImage: 'url(/assets/wallpaper.png)', backgroundSize: 'cover' }}>
+    <div className="w-full p-5" style={{ height: 'calc(100vh - 50px)', backgroundImage: 'url(/assets/wallpaper.jpg)', backgroundSize: 'cover' }}>
       <DraggableContainer />
       <AppDesk />
     </div>
