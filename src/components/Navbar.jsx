@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Navbar() {
+function Navbar({ showFile }) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -75,6 +75,11 @@ function Navbar() {
                 PowerPoint
               </span>
             </li>
+            {showFile && (
+              <li className="relative group hover:bg-black hover:bg-opacity-10 p-1 rounded">
+                <img src="/assets/file.png" alt="file" className="h-6 w-6" />
+              </li>
+            )}
           </ul>
         </div>
         <div className="bg-gray-800 text-white p-3 w-135 flex flex-col items-end justify-center text-[13px]" style={{ height: '50px' }}>

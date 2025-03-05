@@ -4,12 +4,16 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [showFile, setShowFile] = useState(false);
+
+  const handleFileClick = () => {
+    setShowFile(true);
+  };
 
   return (
     <>
-      <Home />
-      <Navbar />
+      <Home onFileClick={handleFileClick} />
+      <Navbar showFile={showFile} />
     </>
   );
 }
