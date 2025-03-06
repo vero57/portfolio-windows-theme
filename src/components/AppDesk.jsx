@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AppDesk({ onFileClick }) {
+function AppDesk({ onFileClick, onSpotifyClick }) {
   return (
     <div>
       <div className="container flex flex-col gap-4 items-start">
@@ -19,7 +19,7 @@ function AppDesk({ onFileClick }) {
             <img src="/assets/vscode.png" alt="VSCode" className="h-10 w-10" />
             <span className="text-white">VSCode</span>
           </div>
-          <div className="flex flex-col items-center group hover:bg-gray-600 hover:bg-opacity-10 p-1 rounded transition-all duration-300">
+          <div className="flex flex-col items-center group hover:bg-gray-600 hover:bg-opacity-10 p-1 rounded transition-all duration-300" onClick={onSpotifyClick}>
             <img src="/assets/spotify.png" alt="Spotify" className="h-11 w-11" />
             <span className="text-white">Spotify</span>
           </div>

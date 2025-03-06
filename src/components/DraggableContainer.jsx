@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-function DraggableContainer() {
+function DraggableContainer({ onClose }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function DraggableContainer() {
     container.style.zIndex = 1000;
 
     const shiftX = e.clientX - rect.left;
-    const shiftY = e.clientY - rect.top;
+    const shiftY = e.clientX - rect.top;
 
     const moveAt = (pageX, pageY) => {
       const newLeft = pageX - shiftX;
@@ -53,7 +53,7 @@ function DraggableContainer() {
       <div className="bg-gray-400 w-full h-10 flex justify-end items-center gap-3">
         <img src="/assets/minimize.png" alt="Minimize" className="w-7 h-7 mx-1 cursor-pointer transition-all duration-300 hover:bg-gray-600 p-1 rounded" />
         <img src="/assets/maximize.png" alt="Maximize" className="w-7 h-7 mx-1 cursor-pointer transition-all duration-300 hover:bg-gray-600 p-1 rounded" />
-        <img src="/assets/close.png" alt="Close" className="w-7 h-7 mx-1 cursor-pointer transition-all duration-300 hover:bg-red-600 p-1 rounded" />
+        <img src="/assets/close.png" alt="Close" className="w-7 h-7 mx-1 cursor-pointer transition-all duration-300 hover:bg-red-600 p-1 rounded" onClick={onClose} />
       </div>
       <div className="mt-4 overflow-auto h-[calc(100%-2.5rem)] p-2">
         <h1 className="text-2xl font-bold">About Me</h1>

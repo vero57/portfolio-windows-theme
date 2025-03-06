@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Navbar({ showFile }) {
+function Navbar({ showFile, showSpotify }) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -78,6 +78,17 @@ function Navbar({ showFile }) {
             {showFile && (
               <li className="relative group hover:bg-black hover:bg-opacity-10 p-1 rounded">
                 <img src="/assets/file.png" alt="file" className="h-6 w-6" />
+                <span className="absolute bottom-full mb-5 w-max bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 group-hover:opacity-100 left-1/2 transform -translate-x-1/2 translate-y-2">
+                About-me.txt
+              </span>
+              </li>
+            )}
+            {showSpotify && (
+              <li className="relative group hover:bg-black hover:bg-opacity-10 p-1 rounded">
+                <img src="/assets/spotify.png" alt="file" className="w-6" />
+                <span className="absolute bottom-full mb-5 w-max bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 group-hover:opacity-100 left-1/2 transform -translate-x-1/2 translate-y-2">
+                Spotify
+              </span>
               </li>
             )}
           </ul>
