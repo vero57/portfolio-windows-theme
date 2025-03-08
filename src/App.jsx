@@ -5,27 +5,31 @@ import Navbar from './components/Navbar';
 import DraggableSpotifyContainer from './components/DraggableSpotifyContainer';
 
 function App() {
-  const [showFile, setShowFile] = useState(false);
-  const [showSpotify, setShowSpotify] = useState(false);
+  const [activeIcons, setActiveIcons] = useState([]);
 
   const handleFileClick = () => {
-    setShowFile(true);
+    setActiveIcons((prevIcons) => [
+      ...prevIcons.filter((icon) => icon.alt !== 'file'),
+      { src: '/assets/file.png', alt: 'file', label: 'About-me.txt' },
+    ]);
   };
 
   const handleSpotifyClick = () => {
-    setShowSpotify(true);
+    setActiveIcons((prevIcons) => [
+      ...prevIcons.filter((icon) => icon.alt !== 'spotify'),
+      { src: '/assets/spotify.png', alt: 'spotify', label: 'Spotify' },
+    ]);
   };
 
-  const handleClose = () => {
-    setShowFile(false);
-    setShowSpotify(false);
+  const handleClose = (alt) => {
+    setActiveIcons((prevIcons) => prevIcons.filter((icon) => icon.alt !== alt));
   };
 
   return (
     <>
-      <Home onFileClick={handleFileClick} onSpotifyClick={handleSpotifyClick} onClose={handleClose} showFile={showFile} showSpotify={showSpotify} />
-      {showSpotify && <DraggableSpotifyContainer onClose={handleClose} />}
-      <Navbar showFile={showFile} showSpotify={showSpotify} />
+      <Home onFileClick={handleFileClick} onSpotifyClick={handleSpotifyClick} onClose={handleClose} activeIcons={activeIcons} />
+      {activeIcons.some((icon) => icon.alt === 'spotify') && <DraggableSpotifyContainer onClose={() => handleClose('spotify')} />}
+      <Navbar activeIcons={activeIcons} />
     </>
   );
 }

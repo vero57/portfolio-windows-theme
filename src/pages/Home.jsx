@@ -3,7 +3,7 @@ import AppDesk from '../components/AppDesk';
 import DraggableContainer from '../components/DraggableContainer';
 import { disableActions } from '../scripts/disableActions';
 
-function Home({ onFileClick, onSpotifyClick, onClose, showFile }) {
+function Home({ onFileClick, onSpotifyClick, onClose, activeIcons }) {
   useEffect(() => {
     const cleanup = disableActions();
     return cleanup;
@@ -11,7 +11,7 @@ function Home({ onFileClick, onSpotifyClick, onClose, showFile }) {
 
   return (
     <div className="w-full p-5" style={{ height: 'calc(100vh - 50px)', backgroundImage: 'url(/assets/wallpaper.jpg)', backgroundSize: 'cover' }}>
-      {showFile && <DraggableContainer onClose={onClose} />}
+      {activeIcons.some((icon) => icon.alt === 'file') && <DraggableContainer onClose={() => onClose('file')} />}
       <AppDesk onFileClick={onFileClick} onSpotifyClick={onSpotifyClick} />
     </div>
   );
