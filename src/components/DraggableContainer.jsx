@@ -25,10 +25,10 @@ function DraggableContainer({ onClose }) {
       const newTop = pageY - shiftY;
 
       const rightBoundary = window.innerWidth - container.offsetWidth;
-      const bottomBoundary = window.innerHeight - container.offsetHeight - 50; // Adjust for Navbar height
+      const bottomBoundary = window.innerHeight - container.offsetHeight - 50;
 
       container.style.left = `${Math.min(Math.max(newLeft, 0), rightBoundary)}px`;
-      container.style.top = `${Math.min(Math.max(newTop, 0), bottomBoundary)}px`; // Adjust for top of the screen
+      container.style.top = `${Math.min(Math.max(newTop, 0), bottomBoundary)}px`;
     };
 
     const onMouseMove = (e) => {
