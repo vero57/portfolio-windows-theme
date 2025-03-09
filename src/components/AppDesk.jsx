@@ -4,10 +4,10 @@ function AppDesk({ onFileClick, onSpotifyClick }) {
   return (
     <div>
       <div className="container flex flex-col gap-4 items-start">
-        <div className="container-1 w-50 h-15 flex gap-4">
+        <div className="container-1 w-60 h-15 flex gap-4">
           <div className="flex flex-col items-center group hover:bg-gray-600 hover:bg-opacity-10 p-1 rounded transition-all duration-300">
             <img src="/assets/rbin.png" alt="Recycle Bin" className="h-10 w-10" />
-            <span className="text-white">Recycle Bin</span>
+            <span className="text-white text-[14px]">Recycle Bin</span>
           </div>
           <div className="flex flex-col items-center group hover:bg-gray-600 hover:bg-opacity-10 p-1 rounded transition-all duration-300">
             <img src="/assets/github.png" alt="GitHub" className="h-10 w-10" />

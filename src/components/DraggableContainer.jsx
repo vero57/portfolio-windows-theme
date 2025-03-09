@@ -18,7 +18,7 @@ function DraggableContainer({ onClose }) {
     container.style.zIndex = 1000;
 
     const shiftX = e.clientX - rect.left;
-    const shiftY = e.clientX - rect.top;
+    const shiftY = e.clientY - rect.top;
 
     const moveAt = (pageX, pageY) => {
       const newLeft = pageX - shiftX;
@@ -32,7 +32,7 @@ function DraggableContainer({ onClose }) {
     };
 
     const onMouseMove = (e) => {
-      moveAt(e.pageX, e.pageY);
+      moveAt(e.clientX, e.clientY);
     };
 
     document.addEventListener('mousemove', onMouseMove);
